@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="hibernate.Profesor.Profesor" table="profesor">
+        <id column="id" name="id" type="int"></id>
+        <property name="nombre" column="nombre"></property>
+        <property name="apellido1"></property>
+        <property name="apellido2"></property>
+    </class>
+</hibernate-mapping>
