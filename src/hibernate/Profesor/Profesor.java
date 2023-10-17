@@ -1,5 +1,6 @@
 package hibernate.Profesor;
 
+import hibernate.Direccion.Direccion;
 import jakarta.persistence.*;
 import java.io.Serializable;
 
@@ -17,6 +18,10 @@ public class Profesor implements Serializable {
     private String apellido1;
     @Column(name = "apellido2")
     private String apellido2;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private Direccion direccion;
 
     public Profesor() {
     }
@@ -66,6 +71,14 @@ public class Profesor implements Serializable {
         this.apellido2 = apellido2;
     }
 
+    public Direccion getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
+    }
+
     @Override
     public String toString() {
         return "Profesor{" +
@@ -73,6 +86,7 @@ public class Profesor implements Serializable {
                 " nombre='" + nombre + '\n' +
                 " apellido1='" + apellido1 + '\n' +
                 " apellido2='" + apellido2 + '\n' +
+                direccion +
                 '}';
     }
 }

@@ -26,5 +26,8 @@
         <mapping class="hibernate.Profesor.Profesor"></mapping>
         <mapping resource="hibernate/Profesor/Profesor.hbm.xml"></mapping>
 
+        <mapping class="hibernate.Direccion.Direccion"></mapping>
+        <mapping resource="hibernate/Direccion/Direccion.hbm.xml"></mapping>
+
     </session-factory>
 </hibernate-configuration>

@@ -3,12 +3,12 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="hibernate.Profesor.Profesor" table="profesor">
+    <class name="hibernate.Direccion.Direccion" table="direccion">
         <id column="id" name="id" type="int"></id>
-        <property name="nombre" column="nombre"></property>
-        <property name="apellido1"></property>
-        <property name="apellido2"></property>
+        <property name="calle" column="calle"></property>
+        <property name="poblacion"></property>
+        <property name="provincia"></property>
 
-        <one-to-one name="direccion" cascade="all"></one-to-one>
+        <one-to-one name="profesor" cascade="all"></one-to-one>
     </class>
 </hibernate-mapping>
