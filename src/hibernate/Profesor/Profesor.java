@@ -1,12 +1,14 @@
 package hibernate.Profesor;
 
+import hibernate.Asignatura.Asignatura;
 import hibernate.Direccion.Direccion;
 import jakarta.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
+
 
 @Entity
 @Table(name = "profesor")
-
 public class Profesor implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,6 +25,8 @@ public class Profesor implements Serializable {
     @PrimaryKeyJoinColumn
     private Direccion direccion;
 
+    @OneToMany(mappedBy = "profesor", cascade = CascadeType.ALL)
+    private Set<Asignatura> asignaturas;
     public Profesor() {
     }
 
@@ -79,6 +83,14 @@ public class Profesor implements Serializable {
         this.direccion = direccion;
     }
 
+    public Set<Asignatura> getAsignaturas() {
+        return asignaturas;
+    }
+
+    public void setAsignaturas(Set<Asignatura> asignaturas) {
+        this.asignaturas = asignaturas;
+    }
+
     @Override
     public String toString() {
         return "Profesor{" +
@@ -87,6 +99,7 @@ public class Profesor implements Serializable {
                 " apellido1='" + apellido1 + '\n' +
                 " apellido2='" + apellido2 + '\n' +
                 direccion +
+                asignaturas+
                 '}';
     }
 }

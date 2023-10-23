@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="hibernate.Asignatura.Asignatura" table="asignatura">
+        <id column="id" name="id" type="int"></id>
+        <property name="nombre" column="nombre"></property>
+        <property name="nombre"></property>
+        <property name="horas"></property>
+
+        <many-to-one name="profesor">
+            <column name="idProfesor"></column>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -10,5 +10,11 @@
         <property name="apellido2"></property>
 
         <one-to-one name="direccion" cascade="all"></one-to-one>
+        <set name="asignaturas" cascade="all" inverse="true">
+            <key>
+                <column name="idProfesor"></column>
+            </key>
+            <one-to-many class="hibernate.Asignatura.Asignatura"></one-to-many>
+        </set>
     </class>
 </hibernate-mapping>
